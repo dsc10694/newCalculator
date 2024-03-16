@@ -1,20 +1,22 @@
 .display{
     padding: 10px;
     margin: 30px;
-    width: 400px;
+    width: 350px;
     height: 100px;
     background-color: antiquewhite;
     border-radius: 20px;
     overflow-wrap: break-word;
     overflow: hidden;
+    font-size: 30px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .shell{
     align-items: center;
     display: flex;
     flex-direction: column;
-    width: 500px;
-    height: 550px;
+    width: 400px;
+    height: 500px;
     background-color: aqua;
     border-radius: 10%;
 }
@@ -24,13 +26,15 @@
     flex-wrap: wrap;
     height: 100px;
     width: 400px;
+    justify-content: center;
 
 
     
 }
 button{
-    
-    margin: 15px;
+    display: flex;
+    margin: 6px;
     width: 70px;
     height: 60px;
+    background-color: cadetblue;
 }

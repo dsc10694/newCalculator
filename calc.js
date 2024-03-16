@@ -19,7 +19,10 @@ let numTwo = ''
 let operator = ''
 
 function operate (operator,numOne,numTwo){
-    if (operator === '+'){
+    if((operator === '/' )&&(numTwo ===0)){
+        prompt='you broke it stupid....hit clear and try again'
+    }
+    else if (operator === '+'){
          return add (numOne,numTwo)
     }    
     else  if (operator === '-'){
@@ -41,7 +44,7 @@ const clear = document.querySelector('.clear')
 const operatorButton = document.querySelectorAll('.operator')
 const numbersButton = document.querySelectorAll('.number')
 const display = document.querySelector('.display')
-
+const decimal = document.getElementById('.');
 
 
 numbersButton.forEach(button => {
@@ -59,11 +62,21 @@ operatorButton.forEach(button =>{
         }
         
         
+        
         numOne = parseFloat(display.textContent)
-        display.textContent += button.value
+        display.innerHTML = ''
         operator = button.value
         
     })
+})
+
+decimal.addEventListener('click', ()=>{
+    if (display.textContent.includes('.')) {
+    return    
+    }
+    else{
+    display.textContent+= decimal.value
+    }
 })
 
 clear.addEventListener('click', () =>{
@@ -75,6 +88,8 @@ clear.addEventListener('click', () =>{
 
 equal.addEventListener('click', () => {
     // Get the display text
+ 
+    
     const displayText = display.textContent;
     console.log('Display Text:', displayText);
     
@@ -91,12 +106,21 @@ equal.addEventListener('click', () => {
     console.log('numTwo:', numTwo);
     
     // Perform the calculation using the operate function
-    
+    if ((operator==='') || (numOne==='') || (numTwo==='')){
+        return
+    }
+    else if ((operator==='/')&& (numTwo===0)){
+        display.textContent = 'Error this calc cant divide by zero...ya fool you want to break me xD'
+    }
+    else{
     answer = operate(operator, numOne, numTwo);
     console.log('Answer:', answer);
+    numOne = answer
+    numTwo=''
     
     
     
-    // Display the result
     display.textContent = answer;
+    }
+    // Display the result
 });
