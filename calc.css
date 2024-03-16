@@ -1,0 +1,36 @@
+.display{
+    padding: 10px;
+    margin: 30px;
+    width: 400px;
+    height: 100px;
+    background-color: antiquewhite;
+    border-radius: 20px;
+    overflow-wrap: break-word;
+    overflow: hidden;
+}
+
+.shell{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 550px;
+    background-color: aqua;
+    border-radius: 10%;
+}
+
+.button_container{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100px;
+    width: 400px;
+
+
+    
+}
+button{
+    
+    margin: 15px;
+    width: 70px;
+    height: 60px;
+}
